@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/chillax-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/chillax-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(48% 0.12 155);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --nav-h: 72px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* brand: paper and ink read from public/logo.png (paper tinted to the logo cream, ink to its blue-black) */
+  --color-paper: oklch(97% 0.012 95); --color-paper-2: oklch(94.5% 0.018 95); --color-paper-3: oklch(91% 0.022 95);
+  --color-ink: oklch(20% 0.022 265); --color-ink-2: oklch(29% 0.02 265); --color-muted: oklch(47% 0.02 265);
+  --color-rule: oklch(87% 0.016 95);
+  /* pear accent, brand yellow at hue 75 kept as the pressed edge; logo blue and green keep their jobs */
+  --color-accent: oklch(87% 0.165 90); --color-accent-deep: oklch(63% 0.12 75); --color-accent-ink: oklch(20% 0.022 265);
+  --color-accent-2: oklch(51% 0.233 264); --color-accent-3: oklch(70% 0.2 22);
+  --color-mint: oklch(82% 0.15 152); --color-mint-deep: oklch(48% 0.12 155); --color-focus: oklch(51% 0.233 264);
+  --color-focus-invert: oklch(72% 0.14 264);
+  --color-card: oklch(98.8% 0.007 95); --color-edge: oklch(83% 0.04 88); --color-fringe: oklch(99.2% 0.006 95);
+  --color-kraft: oklch(63% 0.085 62); --color-sand: oklch(77% 0.1 76); --color-sugar: oklch(89% 0.035 236);
+  --color-leaf: oklch(58% 0.13 155);
+
+  --font-display: "Chillax", ui-rounded, ui-sans-serif, sans-serif; --font-body: var(--font-display);
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
+  --radius-card: 24px; --radius-stock: 16px; --radius-input: 14px; --radius-pill: 999px; --rule-hair: 1px;
+  --shadow-card: 0 1px 2px oklch(20% 0.022 265 / 0.06), 0 12px 28px -14px oklch(20% 0.022 265 / 0.22);
+  --shadow-paper: drop-shadow(0 0 0.6px oklch(20% 0.022 265 / 0.32)) drop-shadow(1.5px 2.5px 1.5px oklch(20% 0.022 265 / 0.1)) drop-shadow(6px 14px 16px oklch(20% 0.022 265 / 0.13));
+  --tracking-display: -0.03em; --display-weight: 600;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Hum's paper: two feTurbulence grains, alpha-only so they lift or darken the fill under them */
+  --grain: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='96'%20height='96'%3E%3Cfilter%20id='g'%20x='0'%20y='0'%20width='96'%20height='96'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20values='0%200%200%200%20.1%200%200%200%200%20.1%200%200%200%200%20.16%20.36%200%200%200%20-.055'/%3E%3C/filter%3E%3Crect%20width='96'%20height='96'%20filter='url(%23g)'%20opacity='.38'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='140'%3E%3Cfilter%20id='f'%20x='0'%20y='0'%20width='220'%20height='140'%3E%3CfeTurbulence%20type='turbulence'%20baseFrequency='.014%20.6'%20numOctaves='2'%20seed='17'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20values='0%200%200%200%20.985%200%200%200%200%20.98%200%200%200%200%20.96%20.55%200%200%200%20-.07'/%3E%3C/filter%3E%3Crect%20width='220'%20height='140'%20filter='url(%23f)'%20opacity='.26'/%3E%3C/svg%3E");
+
+  /* torn edges: seeded value noise, points stay inside the first 5% of the sheet so padding always clears the type */
+  --tear-top: polygon(0% 2.86%, 4% 3.01%, 8% 3.27%, 12% 2.61%, 16% 0.68%, 20% 1.52%, 24% 1.59%, 28% 1.02%, 32% 2.23%, 36% 2.2%, 40% 0.54%, 44% 0%, 48% 1.14%, 52% 1.42%, 56% 2.05%, 60% 3.03%, 64% 3.21%, 68% 4.1%, 72% 4.04%, 76% 3.8%, 80% 3.99%, 84% 4.09%, 88% 3.69%, 92% 2.48%, 96% 2.27%, 100% 3.16%, 100% 100%, 0% 100%);
+  --sticker-cut: polygon(1.1% 0%, 8.68% 0%, 14.84% 3.24%, 22.07% 0%, 29.8% 3.36%, 35.22% 0%, 43.11% 2.68%, 49.39% 0%, 56.77% 3.65%, 63.14% 0%, 71.1% 2.5%, 77.44% 0%, 85.32% 3.78%, 91.07% 0%, 98.9% 0%, 100% 2.2%, 99.15% 25%, 99.31% 50%, 100% 75%, 100% 97.8%, 98.9% 100%, 91.59% 100%, 84.99% 96.29%, 76.96% 100%, 70.05% 95.55%, 63.4% 100%, 57.28% 97.3%, 49.29% 100%, 42.39% 96.86%, 36.53% 100%, 29.68% 96.37%, 21.6% 100%, 14.22% 95.87%, 9.08% 100%, 1.1% 100%, 0% 97.8%, 0% 75%, 0.62% 50%, 0.58% 25%, 0% 2.2%);
+}
